@@ -47,3 +47,33 @@ const pizzas = [
     ingredientes: ["Muzzarella", "Tomate", "Anana"],
   },
 ];
+
+
+//EJERCICIOS
+//PUNTO A.
+
+console.log("Las pizzas con un id impar son:");
+pizzas
+  .filter((pizza) => pizza.id % 2 !== 0)
+  .forEach((pizza) => console.log(`- ${pizza.nombre}`));
+
+//PUNTO B.
+
+const PizzaMenos600 = pizzas.some((pizza) => pizza.precio < 600);
+console.log(`¿Hay alguna pizza que valga menos de $600? ${PizzaMenos600 ? "Si" : "No"}`)
+
+
+//PUNTO C.
+
+console.log("Nombre y precio de c/u");
+pizzas.forEach((pizza) => console.log(`${pizza.nombre}: $${pizza.precio}`));
+
+
+//PUNTO D.
+
+console.log("Ingredientes de cada una:");
+pizzas.forEach((pizza) => {
+  console.log(` ${pizza.nombre}:`);
+  pizza.ingredientes.forEach((ingredientes) => 
+  console.log(`   ${ingredientes}`))
+});
